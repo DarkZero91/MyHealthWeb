@@ -1,4 +1,3 @@
-from persistence.mysql import MySql
 from persistence.dao import Dao
 
 class PulseDao(Dao):
