@@ -21,6 +21,11 @@ def add_ecg_measurement():
 	service.ecg_add(request.form["data"])
 	return "ecg measurement added", ok
 
+@app.route("/measurement/bloodpressure", methods=["POST"])
+def add_bloodpressure_measurement():
+	service.bloodpressure_add(request.form["data"])
+	return "blood pressure measurement added", ok
+
 
 if __name__ == "__main__":
 	app.run(host='0.0.0.0')

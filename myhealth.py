@@ -1,8 +1,10 @@
 import json
 from models.pulse import Pulse
 from models.ecg import ECG
+from models.bloodpressure import BloodPressure
 from persistence.pulsedao import PulseDao
 from persistence.ecgdao import ECGDao
+from persistence.bloodpressuredao import BloodPressureDao
 
 class MyHealth(object):
 	def pulse_add(self, pulse_json):
@@ -26,3 +28,15 @@ class MyHealth(object):
 
 		dao = ECGDao.get_instance()
 		dao.save(ecg)
+
+	def bloodpressure_add(self, bloodpressure_json):
+		data = json.loads(bloodpressure_json)
+		
+		bloodpressure = BloodPressure(
+			data["id"],
+			data["over"],
+			data["under"],
+			data["timestamp"])
+
+		dao = BloodPressureDao.get_instance()
+		dao.save(bloodpressure)
