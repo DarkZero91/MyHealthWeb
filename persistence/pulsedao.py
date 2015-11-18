@@ -1,17 +1,11 @@
 from persistence.mysql import MySql
+from persistence.dao import Dao
 
-class PulseDao(object):
-	dao = None
+class PulseDao(Dao):
 	table = "pulse"
 
-	@classmethod
-	def get_instance(cls):
-		if not (cls.dao):
-			cls.dao = cls()
-		return cls.dao
-
 	def __init__(self):
-		self.db = MySql.get_instance()
+		super(PulseDao, self).__init__()
 
 	def save(self, pulse):
 		sql = "INSERT INTO %s (id, heartrate, created) VALUES (%d, %d, \"%s\")" % (
