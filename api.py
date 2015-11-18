@@ -11,13 +11,16 @@ invalid = 402
 ok = 200
 
 
-### Adds a pulse measurement ###
 @app.route("/measurement/pulse", methods=["POST"])
 def add_pulse_measurement():
-	if service.pulse_add(request.form["data"]):
-		return "pulse measurement added", ok
-	else:
-		return "unable to add pulse measurement", invalid
+	service.pulse_add(request.form["data"])
+	return "pulse measurement added", ok
+
+@app.route("/measurement/ecg", methods=["POST"])
+def add_ecg_measurement():
+	service.ecg_add(request.form["data"])
+	return "ecg measurement added", ok
+
 
 if __name__ == "__main__":
 	app.run(host='0.0.0.0')
