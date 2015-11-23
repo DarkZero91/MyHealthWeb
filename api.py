@@ -13,17 +13,17 @@ ok = 200
 
 @app.route("/measurement/pulse", methods=["POST"])
 def add_pulse_measurement():
-	service.pulse_add(request.form["data"])
+	service.pulse_add(request.data)
 	return "pulse measurement added", ok
 
 @app.route("/measurement/ecg", methods=["POST"])
 def add_ecg_measurement():
-	service.ecg_add(request.form["data"])
+	service.ecg_add(request.data)
 	return "ecg measurement added", ok
 
 @app.route("/measurement/bloodpressure", methods=["POST"])
 def add_bloodpressure_measurement():
-	service.bloodpressure_add(request.form["data"])
+	service.bloodpressure_add(request.data)
 	return "blood pressure measurement added", ok
 
 
