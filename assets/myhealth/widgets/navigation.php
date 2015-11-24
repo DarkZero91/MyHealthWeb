@@ -11,5 +11,11 @@
 				MyHealth
 			</a>
 		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      			<ul class="nav navbar-nav">
+        			<li<?php if($_SERVER['REQUEST_URI'] == "/myhealth/") { print ' class="active"'; } ?>><a href="/myhealth">Home</a></li>
+				<li<?php if($_SERVER['REQUEST_URI'] == "/myhealth/page/measurements/") { print ' class="active"'; } ?>><a href="page/measurements">Meetingen</a></li>
+      			</ul>
+		</div>
 	</div>
 </nav>
