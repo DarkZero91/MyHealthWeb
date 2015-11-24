@@ -9,7 +9,11 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12">
-					<div id="measurements"></div>
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#">Ecg</a></li>
+						<li><a href="#">Bloeddruk</a></li>
+						<li><a href="#">Hartslag</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
