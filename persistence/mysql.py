@@ -1,4 +1,4 @@
-import _mysql
+import MySQLdb as mdb
 import sys
 
 class MySql(object):
@@ -19,7 +19,7 @@ class MySql(object):
 
 	def connect(self):
 		try:
-			self.con = _mysql.connect(self.host, self.user, self.password, self.database)
+			self.con = mdb.connect(self.host, self.user, self.password, self.database)
 		except _mysql.Error, e:
 			print "Error %d: %s" % (e.args[0], e.args[1])
 			sys.exit(1)
@@ -28,5 +28,6 @@ class MySql(object):
 		self.con.close()
 
 	def query(self, query):
-		self.con.query(query)
-		return self.con.use_result()
+		cur = self.con.cursor(mdb.cursors.DictCursor)
+		cur.execute(query)
+		return cur

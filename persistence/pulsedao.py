@@ -10,4 +10,9 @@ class PulseDao(Dao):
 		sql = "INSERT INTO %s (id, heartrate, created) VALUES (%d, %d, \"%s\")" % (
 			self.table, pulse.get_id(), pulse.get_heartrate(), pulse.get_timestamp())
 		self.db.query(sql)
-		
+		self.db.con.commit()
+
+	def list(self):
+		sql = "SELECT * FROM pulse;"
+		result = self.db.query(sql)
+		return result.fetchall()

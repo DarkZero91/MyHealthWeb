@@ -11,4 +11,4 @@ class BloodPressureDao(Dao):
 			self.table, bloodpressure.get_id(), bloodpressure.get_over(),
 			bloodpressure.get_under(), bloodpressure.get_timestamp())
 		self.db.query(sql)
-		
+		self.db.con.commit()

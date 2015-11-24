@@ -11,4 +11,5 @@ class ECGDao(Dao):
 		sql = "INSERT INTO %s (id, data, created) VALUES (%d, \"%s\", \"%s\")" % (
 			self.table, ecg.get_id(), data, ecg.get_timestamp())
 		self.db.query(sql)
+		self.db.con.commit()
 		

@@ -7,28 +7,35 @@ from persistence.ecgdao import ECGDao
 from persistence.bloodpressuredao import BloodPressureDao
 
 class MyHealth(object):
+	# PULSE
 	def pulse_add(self, pulse_json):
 		data = json.loads(pulse_json)
 
 		pulse = Pulse(
 			data["id"],
 			data["heartrate"],
-			data["timestamp"])
+			data["created"])
 		
 		dao = PulseDao.get_instance()
 		dao.save(pulse)
 
+	def pulse_list(self):
+		dao = PulseDao.get_instance()
+		return json.dumps(dao.list())
+
+	# ECG
 	def ecg_add(self, ecg_json):
 		data = json.loads(ecg_json)
 		
 		ecg = ECG(
 			data["id"],
 			data["data"],
-			data["timestamp"])
+			data["created"])
 
 		dao = ECGDao.get_instance()
 		dao.save(ecg)
 
+	# BLOOD PRESSURE
 	def bloodpressure_add(self, bloodpressure_json):
 		data = json.loads(bloodpressure_json)
 		
@@ -36,7 +43,7 @@ class MyHealth(object):
 			data["id"],
 			data["over"],
 			data["under"],
-			data["timestamp"])
+			data["created"])
 
 		dao = BloodPressureDao.get_instance()
 		dao.save(bloodpressure)
