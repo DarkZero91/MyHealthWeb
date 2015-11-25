@@ -26,6 +26,10 @@ def add_ecg_measurement():
 	service.ecg_add(request.data)
 	return "ecg measurement added", ok
 
+@app.route("/measurement/ecgs", methods=["GET"])
+def list_ecg_measurements():
+	return service.ecg_list(), ok
+
 # BLOOD PRESSURE
 @app.route("/measurement/bloodpressure", methods=["POST"])
 def add_bloodpressure_measurement():

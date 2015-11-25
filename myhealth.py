@@ -35,6 +35,10 @@ class MyHealth(object):
 		dao = ECGDao.get_instance()
 		dao.save(ecg)
 
+	def ecg_list(self):
+		dao = ECGDao.get_instance()
+		return json.dumps(dao.list())
+
 	# BLOOD PRESSURE
 	def bloodpressure_add(self, bloodpressure_json):
 		data = json.loads(bloodpressure_json)

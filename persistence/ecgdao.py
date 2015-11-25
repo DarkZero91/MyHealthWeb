@@ -13,3 +13,7 @@ class ECGDao(Dao):
 		self.db.query(sql)
 		self.db.con.commit()
 		
+	def list(self):
+		sql = "SELECT * FROM ecg;"
+		result = self.db.query(sql)
+		return result.fetchall() 
