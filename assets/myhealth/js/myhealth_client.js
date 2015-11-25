@@ -26,3 +26,30 @@ function measurements_get_bloodpressures(callback) {
 		method: "GET"
 	});
 }
+
+function measurement_delete_ecg(id, callback) {
+	$.ajax({
+		url: URL + "?route=/measurement/ecg/" + id,
+		success: callback.success,
+		error: callback.error,
+		method: "DELETE"
+	});
+}
+
+function measurement_delete_pulse(id, callback) {
+	$.ajax({
+		url: URL + "?route=/measurement/pulse/" + id,
+		success: callback.success,
+		error: callback.error,
+		method: "DELETE"
+	});
+}
+
+function measurement_delete_bloodpressure(id, callback) {
+	$.ajax({
+		url: URL + "?route=/measurement/bloodpressure/" + id,
+		success: callback.success,
+		error: callback.error,
+		method: "DELETE"
+	});
+}
