@@ -7,7 +7,7 @@ var call_error = function() { alert("De metingen konden niet worden opgevraagd. 
 
 var parse_pulse_table = function(data) {
 	response = $.parseJSON(data);
-	$("#measurement-table").append(
+	$("#measurement-table").empty().append(
 		$("<tr>").append(
 			$("<th>").width(24),
 			$("<th>").text("hartslag"),
@@ -23,3 +23,22 @@ var parse_pulse_table = function(data) {
 		$("#measurement-table").append($tr);
 	});
 };
+
+var parse_ecg_table = function(data) {
+	response = $.parseJSON(data);
+	$("#measurement-table").empty().append(
+		$("<tr>").append(
+			$("<th>").width(24),
+			$("<th>").text("nummer"),
+			$("<th>").text("datum")
+		)
+	);
+	$.each(response, function(i, item) {
+		var $tr = $("<tr>").append(
+			$("<td>").append($("<img>").attr({src: "/myhealth/assets/myhealth/img/ecg-small.png"})),
+			$("<td>").text(item.id),
+			$("<td>").text(item.created)
+		);
+		$("#measurement-table").append($tr);
+	});
+}

@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	get_data("ecg");
 	$(".measurement-tab").click(function() {
 		id = $(this).attr("id");
 		$(".measurement-tab.active").removeClass("active");
@@ -8,8 +9,12 @@ $(document).ready(function() {
 });
 
 function get_data(type) {
-	if(type == "pulse") {
-		c = new callback(parse_pulse_table, call_error)
+	if(type == "ecg") {
+		c = new callback(parse_ecg_table, call_error);
+		measurements_get_ecgs(c);
+	}
+	else if(type == "pulse") {
+		c = new callback(parse_pulse_table, call_error);
 		measurements_get_pulses(c);
 	}
 }
