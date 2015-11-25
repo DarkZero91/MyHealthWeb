@@ -36,6 +36,10 @@ def add_bloodpressure_measurement():
 	service.bloodpressure_add(request.data)
 	return "blood pressure measurement added", ok
 
+@app.route("/measurement/bloodpressures", methods=["GET"])
+def list_bloodpressure_measurements():
+	return service.bloodpressure_list(), ok
+
 
 if __name__ == "__main__":
 	app.run(host='0.0.0.0')

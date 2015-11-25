@@ -12,3 +12,8 @@ class BloodPressureDao(Dao):
 			bloodpressure.get_under(), bloodpressure.get_timestamp())
 		self.db.query(sql)
 		self.db.con.commit()
+	
+	def list(self):
+		sql = "SELECT * FROM bloodpressure;"
+		result = self.db.query(sql)
+		return result.fetchall()

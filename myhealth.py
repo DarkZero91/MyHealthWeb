@@ -51,3 +51,7 @@ class MyHealth(object):
 
 		dao = BloodPressureDao.get_instance()
 		dao.save(bloodpressure)
+
+	def bloodpressure_list(self):
+		dao = BloodPressureDao.get_instance()
+		return json.dumps(dao.list())
