@@ -5,7 +5,8 @@ function callback(success, error) {
 
 
 function add_delete_click_listener() {
-	$(".delete").click(function() {
+	$(".delete").click(function(e) {
+		e.stopPropagation();
 		id = $(this).data("id");
 		type = $(".measurement-tab.active").attr("id");
 		if(confirm("Weet u zeker dat u de meting wilt verwijderen?")) {
