@@ -19,6 +19,10 @@ class MyHealth(object):
 		dao = PulseDao.get_instance()
 		dao.save(pulse)
 
+	def pulse_delete(self, id):
+		dao = PulseDao.get_instance()
+		dao.delete(id)
+
 	def pulse_list(self):
 		dao = PulseDao.get_instance()
 		return json.dumps(dao.list())

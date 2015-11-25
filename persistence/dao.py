@@ -19,7 +19,7 @@ class Dao(object):
 	def get(self, id):
 		print "Not implemented!"
 
-	def delete(self, model):
+	def delete(self, id):
 		print "Not implemented!"
 
 	def list(self):

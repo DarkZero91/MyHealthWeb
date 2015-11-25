@@ -16,6 +16,11 @@ def add_pulse_measurement():
 	service.pulse_add(request.data)
 	return "pulse measurement added", ok
 
+@app.route("/measurement/pulse/<id>", methods=["DELETE"])
+def delete_pulse_measurement(id):
+	service.pulse_delete(int(id))
+	return "pulse measurement deleted", ok
+
 @app.route("/measurement/pulses", methods=["GET"])
 def list_pulse_measurement():
 	return service.pulse_list(), ok
