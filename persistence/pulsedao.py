@@ -13,11 +13,11 @@ class PulseDao(Dao):
 		self.db.con.commit()
 
 	def delete(self, id):
-		sql = "DELETE FROM pulse WHERE id = %d;" % id
+		sql = "DELETE FROM %s WHERE id = %d;" % (self.table, id)
 		self.db.query(sql)
 		self.db.con.commit()
 
 	def list(self):
-		sql = "SELECT * FROM pulse;"
+		sql = "SELECT * FROM %s;" % self.table
 		result = self.db.query(sql)
 		return result.fetchall()

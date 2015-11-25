@@ -14,11 +14,11 @@ class ECGDao(Dao):
 		self.db.con.commit()
 
 	def delete(self, id):
-		sql = "DELETE FROM ecg WHERE id = %d;" % id
+		sql = "DELETE FROM %s WHERE id = %d;" % (self.table, id)
 		self.db.query(sql)
 		self.db.con.commit()
 		
 	def list(self):
-		sql = "SELECT * FROM ecg;"
+		sql = "SELECT * FROM %s;" % self.table
 		result = self.db.query(sql)
 		return result.fetchall() 
