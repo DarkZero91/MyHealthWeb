@@ -10,9 +10,9 @@
 			<div class="row">
 				<div class="col-md-12">
 					<ul class="nav nav-tabs">
-						<li class="active"><a href="#">Ecg</a></li>
-						<li><a href="#">Bloeddruk</a></li>
-						<li><a href="#">Hartslag</a></li>
+						<li id="ecg" class="measurement-tab active"><a href="#">Ecg</a></li>
+						<li id="bloodpressure" class="measurement-tab"><a href="#">Bloeddruk</a></li>
+						<li id="pulse" class="measurement-tab"><a href="#">Hartslag</a></li>
 					</ul>
 				</div>
 			</div>

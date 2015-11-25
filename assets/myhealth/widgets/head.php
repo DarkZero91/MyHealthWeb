@@ -13,3 +13,4 @@
 
 <!-- MyHealth -->
 <link rel="stylesheet" href="/myhealth/assets/myhealth/stylesheet/stylesheet.css" />
+<script src="/myhealth/assets/myhealth/js/myhealth.js"></script>
