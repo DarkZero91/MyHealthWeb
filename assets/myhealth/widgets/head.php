@@ -11,6 +11,9 @@
 <script src="/myhealth/assets/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="/myhealth/assets/bootstrap-3.3.4-dist/css/bootstrap.min.css" />
 
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+
 <!-- MyHealth -->
 <link rel="stylesheet" href="/myhealth/assets/myhealth/stylesheet/stylesheet.css" />
 <script src="/myhealth/assets/myhealth/js/myhealth.js"></script>
