@@ -18,3 +18,11 @@ function measurements_get_pulses(callback) {
 	});
 }
 
+function measurements_get_bloodpressures(callback) {
+	$.ajax({
+		url: URL + "?route=/measurement/bloodpressures",
+		success: callback.success,
+		error: callback.error,
+		method: "GET"
+	});
+}

@@ -13,6 +13,10 @@ function get_data(type) {
 		c = new callback(parse_ecg_table, call_error);
 		measurements_get_ecgs(c);
 	}
+	else if(type == "bloodpressure") {
+		c = new callback(parse_bloodpressure_table, call_error);
+		measurements_get_bloodpressures(c);
+	}
 	else if(type == "pulse") {
 		c = new callback(parse_pulse_table, call_error);
 		measurements_get_pulses(c);

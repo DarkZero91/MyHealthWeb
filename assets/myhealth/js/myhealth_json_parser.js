@@ -42,3 +42,22 @@ var parse_ecg_table = function(data) {
 		$("#measurement-table").append($tr);
 	});
 }
+
+var parse_bloodpressure_table = function(data) {
+	response = $.parseJSON(data);
+	$("#measurement-table").empty().append(
+		$("<tr>").append(
+			$("<th>").width(24),
+			$("<th>").text("bloeddruk"),
+			$("<th>").text("datum")
+		)
+	);
+	$.each(response, function(i, item) {
+		var $tr = $("<tr>").append(
+			$("<td>").append($("<img>").attr({src: "/myhealth/assets/myhealth/img/bloodpressure-small.png"})),
+			$("<td>").text(item.over + "/" + item.under),
+			$("<td>").text(item.created)
+		);
+		$("#measurement-table").append($tr);
+	});
+}
