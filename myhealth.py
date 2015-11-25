@@ -39,6 +39,10 @@ class MyHealth(object):
 		dao = ECGDao.get_instance()
 		dao.save(ecg)
 
+	def ecg_delete(self, id):
+		dao = ECGDao.get_instance()
+		dao.delete(id)
+
 	def ecg_list(self):
 		dao = ECGDao.get_instance()
 		return json.dumps(dao.list())

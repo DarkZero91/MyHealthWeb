@@ -12,6 +12,11 @@ class ECGDao(Dao):
 			self.table, ecg.get_id(), data, ecg.get_timestamp())
 		self.db.query(sql)
 		self.db.con.commit()
+
+	def delete(self, id):
+		sql = "DELETE FROM ecg WHERE id = %d;" % id
+		self.db.query(sql)
+		self.db.con.commit()
 		
 	def list(self):
 		sql = "SELECT * FROM ecg;"
