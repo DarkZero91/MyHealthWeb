@@ -31,6 +31,11 @@ def add_ecg_measurement():
 	service.ecg_add(request.data)
 	return "ecg measurement added", ok
 
+@app.route("/measurement/ecg/<id>", methods=["GET"])
+def get_ecg_measurement(id):
+	return service.ecg_get(int(id)), ok
+
+
 @app.route("/measurement/ecg/<id>", methods=["DELETE"])
 def delete_ecg_measurement(id):
 	service.ecg_delete(int(id))
