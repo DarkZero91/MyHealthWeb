@@ -46,6 +46,11 @@ def add_bloodpressure_measurement():
 	service.bloodpressure_add(request.data)
 	return "blood pressure measurement added", ok
 
+@app.route("/measurement/bloodpressure/<id>", methods=["DELETE"])
+def delete_bloddpressure_measurement(id):
+	service.bloodpressure_delete(int(id))
+	return "blood pressure measurement deleted", ok
+
 @app.route("/measurement/bloodpressures", methods=["GET"])
 def list_bloodpressure_measurements():
 	return service.bloodpressure_list(), ok

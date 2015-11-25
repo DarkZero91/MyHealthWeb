@@ -60,6 +60,10 @@ class MyHealth(object):
 		dao = BloodPressureDao.get_instance()
 		dao.save(bloodpressure)
 
+	def bloodpressure_delete(self, id):
+		dao = BloodPressureDao.get_instance()
+		dao.delete(id)
+
 	def bloodpressure_list(self):
 		dao = BloodPressureDao.get_instance()
 		return json.dumps(dao.list())

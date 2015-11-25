@@ -12,8 +12,13 @@ class BloodPressureDao(Dao):
 			bloodpressure.get_under(), bloodpressure.get_timestamp())
 		self.db.query(sql)
 		self.db.con.commit()
+
+	def delete(self, id):
+		sql = "DELETE FROM %s WHERE id = %d;" %(self.table, id)
+		self.db.query(sql)
+		self.db.con.commit()
 	
 	def list(self):
-		sql = "SELECT * FROM bloodpressure;"
+		sql = "SELECT * FROM %s;" % self.table
 		result = self.db.query(sql)
 		return result.fetchall()
