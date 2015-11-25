@@ -14,7 +14,7 @@
 						<li id="bloodpressure" class="measurement-tab"><a href="#">Bloeddruk</a></li>
 						<li id="pulse" class="measurement-tab"><a href="#">Hartslag</a></li>
 					</ul>
-					<table id="measurement-table" class="table"></table>
+					<table id="measurement-table" class="table table-striped"></table>
 				</div>
 			</div>
 		</div>
